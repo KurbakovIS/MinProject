@@ -1,7 +1,8 @@
 body {
-    font-family: "Open sans";
+    font-family: "Open sans", serif;
     margin-top: 300px;
     text-align: center;
+    color: white;
 }
 
 #clock {

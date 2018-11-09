@@ -18,7 +18,7 @@ function hexoClock() {
     }
 
     let clockString = `${h} : ${m} : ${s}`,
-        colorString = `# ${h}${m}${s}`;
+        colorString = `#${h}${m}${s}`;
 
     clock.textContent = clockString;
     color.textContent = colorString;
