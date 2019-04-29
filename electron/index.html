@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proger App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Конвертер температуры!</h1>
+<div class="form-group col-md-3">
+    <label for="usr">Цельсии:</label>
+    <input type="text" class="form-control" id="celsius" onkeyup="celciusToFahrenheit()">
+</div>
+
+<div class="form-group col-md-3">
+    <label for="pwd">Фаренгейты:</label>
+    <input type="text" class="form-control" id="fahrenheit" onkeyup="fahrenheitToCelcius()">
+</div>
+<script>
+    require('./render.js');
+
+    function celciusToFahrenheit() {
+        let celsius = document.querySelector('#celsius').value;
+        let fahrenheit;
+        if (celsius) {
+            fahrenheit = (celsius * 9 / 5) + 32
+        }else{
+            fahrenheit = 0;
+        }
+        document.querySelector('#fahrenheit').value = fahrenheit;
+    }
+
+    function fahrenheitToCelcius() {
+        let fahrenheit = document.querySelector('#fahrenheit').value;
+        let celsius;
+        console.log(fahrenheit)
+        if (fahrenheit) {
+            celsius = fahrenheit - 32
+        }else{
+            celsius = 0;
+        }
+        document.querySelector('#celsius').value = celsius;
+    }
+</script>
+</body>
+</html>
