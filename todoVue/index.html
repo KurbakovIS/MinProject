@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <div class="stats">
+        <h3 class="stats__title">{{"Текущие задачи: " + tasks.length}}</h3>
+        <task v-for="(data,index) in tasks"
+              :key="index"
+              :data="data"
+              @task_done="delete_task(index)"></task>
+    </div>
+    <div class="add_task">
+        <div class="add_task__input">
+            <input type="text" v-model="newTask.title" placeholder="Новая задача">
+            <textarea placeholder="Описание" v-model="newTask.desc"></textarea>
+        </div>
+        <button class="add_task__btn"
+                @click="add_task()">➕</button>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
